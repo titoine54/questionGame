@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  #get 'welcome/index'
+  #get 'welcome/index''
+  resources :questions
 
   match ':controller(/:action(/:id))', :via => :get
 
