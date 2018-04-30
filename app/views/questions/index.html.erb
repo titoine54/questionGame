@@ -20,7 +20,18 @@
         <td><%= question.author %></td>
         <td><%= question.country %></td>
         <td><%= question.state %></td>
+        <td><%= question.score %></td>
         <td><%= link_to 'Show', question %></td>
+        <td>
+          <form action="questions/vote/<%= question.id %>" method="POST">
+            <input type=submit name="vote_type" value="UP">
+          </form>
+        </td>
+        <td>
+          <form action="questions/vote/<%= question.id %>" method="POST">
+            <input type=submit name="vote_type" value="DOWN">
+          </form>
+        </td>
       </tr>
     <% end %>
   </tbody>
