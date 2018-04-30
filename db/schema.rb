@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912020342) do
+ActiveRecord::Schema.define(version: 20180430035553) do
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.text "question"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20170912020342) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "score", limit: 24, default: 0.0, null: false
+    t.integer "ups", default: 0, null: false
+    t.integer "downs", default: 0, null: false
   end
 
 end
