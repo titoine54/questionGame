@@ -17,9 +17,21 @@
   </div>
 
   <div class="field">
-    <%= form.label :author_string %>
-    <%= form.text_field :author_string, id: :question_author_string %>
+    <%= form.label :author %>
+    <%= form.text_field :author, id: :question_author %>
   </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :question_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :question_state %>
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
