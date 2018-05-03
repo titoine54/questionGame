@@ -1,0 +1,21 @@
+<p>
+  <strong>Question:</strong>
+  <%= @question.question %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @question.author %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @question.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @question.state %>
+</p>
+
+<%= link_to 'Next', controller: "questions", action: "game"%>

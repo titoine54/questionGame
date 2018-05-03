@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :update]
 
   # TODO find a way to make this safer
-  protect_from_forgery with: :null_session, only: [:vote]
+  protect_from_forgery with: :null_session, only: [:vote, :game]
 
   # GET /questions
   # GET /questions.json
@@ -54,6 +54,12 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+  end
+
+  # GET /questions/game
+  def game
+    @question = Question.first
+    puts @question
   end
 
   # POST /questions
