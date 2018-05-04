@@ -61,8 +61,6 @@ class QuestionsController < ApplicationController
 
     if params[:question_id].present?
       if Question.count == session[:old_questions_id].count + 1
-
-        puts "hellio"
         session[:old_questions_id] = []
         redirect_to action: "index"
       else
@@ -74,11 +72,6 @@ class QuestionsController < ApplicationController
     else
       @question = Question.order("score DESC").first
     end
-
-    #session[:old_questions_id] = []
-    puts "session #{session[:old_questions_id]}"
-    puts "param  #{params[:question_id]}"
-
   end
 
   # POST /questions
