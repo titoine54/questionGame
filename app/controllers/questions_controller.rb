@@ -43,7 +43,7 @@ class QuestionsController < ApplicationController
     end
 
     score = (sign * order + seconds / 45000).round(7)
-    puts score
+
     @question.update(score: score)
     @question.save()
 
@@ -58,8 +58,27 @@ class QuestionsController < ApplicationController
 
   # GET /questions/game
   def game
-    @question = Question.first
-    puts @question
+
+    if params[:question_id].present?
+      if Question.count == session[:old_questions_id].count + 1
+
+        puts "hellio"
+        session[:old_questions_id] = []
+        redirect_to action: "index"
+      else
+        unless session[:old_questions_id].include? params[:question_id].to_i
+          session[:old_questions_id].push(params[:question_id].to_i)
+        end
+        @question = Question.where.not(id: session[:old_questions_id]).order("score DESC").first
+      end
+    else
+      @question = Question.order("score DESC").first
+    end
+
+    #session[:old_questions_id] = []
+    puts "session #{session[:old_questions_id]}"
+    puts "param  #{params[:question_id]}"
+
   end
 
   # POST /questions

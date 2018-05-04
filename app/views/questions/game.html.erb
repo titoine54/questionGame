@@ -18,4 +18,5 @@
   <%= @question.state %>
 </p>
 
-<%= link_to 'Next', controller: "questions", action: "game"%>
+<%= link_to 'Next', controller: "questions", action: "game", question_id: @question.id%>
+<%= link_to 'Home', questions_path %>
