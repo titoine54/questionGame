@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "questions" %>
+<%= render 'navbar' %>
   <div class="container text-center">
   <p id="notice"><%= notice %></p>
 
@@ -22,5 +23,5 @@
     <%= @question.state %>
   </p>
 
-  <%= link_to 'Back', questions_path, :class => "button-style-1" %>
+  <%= link_to 'Back', questions_path, :class => "a-tag-button button-style-1" %>
 </div>
