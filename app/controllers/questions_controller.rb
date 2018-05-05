@@ -7,6 +7,11 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
+    
+  end
+
+  # GET /questions/list
+  def list
     @questions = Question.all.order(score: :desc)
   end
 
@@ -58,7 +63,6 @@ class QuestionsController < ApplicationController
 
   # GET /questions/game
   def game
-
     if params[:question_id].present?
       if Question.count == session[:old_questions_id].count + 1
         session[:old_questions_id] = []
