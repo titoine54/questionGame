@@ -1,24 +1,13 @@
-# README
+# Personal projet in order to learn Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versions
+* Ruby version : `ruby2.4`
+* Rails version : `5.1.6`
+* MariaDB (MySQL) version : `10.2.9`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup
+* Checkout project
+* Run `bundle install`
+* Start MySQL server
+* Run `rake db:migration`
+* Start the solution `rails server`
