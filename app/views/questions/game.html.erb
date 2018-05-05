@@ -1,22 +1,25 @@
-<p>
-  <strong>Question:</strong>
-  <%= @question.question %>
-</p>
+<%= stylesheet_link_tag "questions" %>
+<div class="container text-center">
+  <p>
+    <strong>Question:</strong>
+    <%= @question.question %>
+  </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @question.author %>
-</p>
+  <p>
+    <strong>Author:</strong>
+    <%= @question.author %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @question.country %>
-</p>
+  <p>
+    <strong>Country:</strong>
+    <%= @question.country %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @question.state %>
-</p>
+  <p>
+    <strong>State:</strong>
+    <%= @question.state %>
+  </p>
 
-<%= link_to 'Next', controller: "questions", action: "game", question_id: @question.id%>
-<%= link_to 'Home', questions_path %>
+  <%= link_to 'Next', {controller: "questions", action: "game", question_id: @question.id}, :class => "button-style-1"%>
+  <%= link_to 'Home', questions_path, :class => "button-style-1"%>
+</div>

@@ -1,43 +1,46 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag "questions" %>
+<div class="container text-center">
+  <p id="notice"><%= notice %></p>
 
-<h1>Questions</h1>
+  <h1>Questions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Question</th>
-      <th>Author</th>
-      <th>State</th>
-      <th>Country</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= question.question %></td>
-        <td><%= question.author %></td>
-        <td><%= question.country %></td>
-        <td><%= question.state %></td>
-        <td><%= question.score %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td>
-          <form action="questions/vote/<%= question.id %>" method="POST">
-            <input type=submit name="vote_type" value="UP">
-          </form>
-        </td>
-        <td>
-          <form action="questions/vote/<%= question.id %>" method="POST">
-            <input type=submit name="vote_type" value="DOWN">
-          </form>
-        </td>
+        <th>Question</th>
+        <th>Author</th>
+        <th>State</th>
+        <th>Country</th>
+        <th colspan="5"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.question %></td>
+          <td><%= question.author %></td>
+          <td><%= question.country %></td>
+          <td><%= question.state %></td>
+          <td><%= question.score %></td>
+          <td><%= link_to 'Show', question %></td>
+          <td>
+            <form action="questions/vote/<%= question.id %>" method="POST">
+              <input type=submit name="vote_type" value="UP">
+            </form>
+          </td>
+          <td>
+            <form action="questions/vote/<%= question.id %>" method="POST">
+              <input type=submit name="vote_type" value="DOWN">
+            </form>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Question', new_question_path %>
-<%= link_to 'Home', questions_path %>
+  <br>
+
+  <%= link_to 'New Question', new_question_path, :class => "button-style-1" %>
+  <%= link_to 'Home', questions_path, :class => "button-style-1" %>
+</div>

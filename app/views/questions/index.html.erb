@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Questions</h1>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
-<%= link_to 'Start Game', controller: "questions", action: "game"%>
+<%= stylesheet_link_tag "questions" %>
+<div class="container text-center">
+  <h1>The questions game</h1>
+  <br>
+  <div class="button-wrap">
+    <%= link_to 'New Question', new_question_path, :class => "button-style-1"%>
+    <%= link_to 'Start Game', {controller: "questions", action: "game"}, :class => "button-style-1"%>
+  </div>
+</div>
