@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    
+
   end
 
   # GET /questions/list
@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
     @question.update(score: score)
     @question.save()
 
-    redirect_to action: "index"
+    redirect_to controller: "questions", action: "game", question_id: @question.id
 
   end
 
@@ -75,6 +75,7 @@ class QuestionsController < ApplicationController
       end
     else
       @question = Question.order("score DESC").first
+      session[:old_questions_id] = []
     end
   end
 
