@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :question %>
-    <%= form.text_area :question, id: :question_question %>
+  <div class="field new-question-fields">
+    <%= form.label :question %> :
+    <%= form.text_field :question, id: :question_question, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :question_author %>
+  <div class="field new-question-fields">
+    <%= form.label :author %> :
+    <%= form.text_field :author, id: :question_author, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country, id: :question_country %>
+  <div class="field new-question-fields">
+    <%= form.label :country %> :
+    <%= form.text_field :country, id: :question_country, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state, id: :question_state %>
+  <div class="field new-question-fields">
+    <%= form.label :state %> :
+    <%= form.text_field :state, id: :question_state, class: "form-control" %>
   </div>
 
   <%= form.submit 'Submit Question', :class => 'submit-button-style-1 btn button-style-1' %>

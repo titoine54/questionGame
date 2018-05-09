@@ -29,7 +29,7 @@ body {
     padding: 20px 30px;
 }
 
-a.button-style-1, input.button-style-1 {
+a.button-style-1, input.button-style-1{
     color: rgba(30, 22, 54, 0.6);
     box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
 }
@@ -47,4 +47,23 @@ a.button-style-1:hover, input.button-style-1:hover {
 
 .submit-button-style-1:hover {
   text-decoration: underline;
+}
+
+.button-up-down {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #333333;
+}
+.button-up-down:hover {
+  color: rgba(30, 22, 54, 0.6);
+  transition: color 0.2s ease-out;
+}
+
+.glyphicon {
+    font-size: 50px;
+}
+
+.new-question-fields {
+  padding-bottom: 15px;
 }
